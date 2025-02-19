@@ -1,0 +1,25 @@
+{
+    "name": "My Sidebar Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "An extension that injects a sidebar into the active page on installation.",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "My Sidebar"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
